@@ -9,7 +9,7 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasActivityInjector;
+import dagger.android.HasAndroidInjector;
 
 /**
  * File Description
@@ -19,7 +19,7 @@ import dagger.android.HasActivityInjector;
  * Created: 7/24/2018
  * Modified: 7/24/2018
  */
-public class NYTimesApp extends Application implements HasActivityInjector {
+public class NYTimesApp extends Application implements HasAndroidInjector {
 
     private static NYTimesApp sInstance;
 
@@ -34,7 +34,7 @@ public class NYTimesApp extends Application implements HasActivityInjector {
         sInstance = app;
     }
     @Inject
-    DispatchingAndroidInjector<Activity> activityDispatchingInjector;
+    DispatchingAndroidInjector<Object> activityDispatchingInjector;
 
     @Override
     public void onCreate() {
@@ -50,8 +50,13 @@ public class NYTimesApp extends Application implements HasActivityInjector {
                 .inject(this);
     }
 
+//    @Override
+//    public AndroidInjector<Activity> activityInjector() {
+//        return activityDispatchingInjector;
+//    }
+
     @Override
-    public AndroidInjector<Activity> activityInjector() {
+    public AndroidInjector<Object> androidInjector() {
         return activityDispatchingInjector;
     }
 }

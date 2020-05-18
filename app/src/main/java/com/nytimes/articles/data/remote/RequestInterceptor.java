@@ -1,6 +1,6 @@
 package com.nytimes.articles.data.remote;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ public class RequestInterceptor implements Interceptor {
         HttpUrl originalHttpUrl = originalRequest.url();
 
         HttpUrl url = originalHttpUrl.newBuilder()
-                .addQueryParameter("api_key", ApiConstants.API_KEY)
+                .addQueryParameter("api-key", ApiConstants.API_KEY)
                 .build();
 
         Request request = originalRequest.newBuilder().url(url).build();

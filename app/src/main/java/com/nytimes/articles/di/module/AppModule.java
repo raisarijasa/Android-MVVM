@@ -1,7 +1,7 @@
 package com.nytimes.articles.di.module;
 
 import android.app.Application;
-import android.arch.persistence.room.Room;
+import androidx.room.Room;
 
 import com.nytimes.articles.data.local.ArticleDatabase;
 import com.nytimes.articles.data.local.dao.ArticleDao;

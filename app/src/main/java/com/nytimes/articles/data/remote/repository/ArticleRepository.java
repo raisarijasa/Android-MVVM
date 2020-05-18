@@ -1,8 +1,8 @@
 package com.nytimes.articles.data.remote.repository;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.LiveData;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.annotation.NonNull;
 
 import com.nytimes.articles.data.local.dao.ArticleDao;
 import com.nytimes.articles.data.local.entity.ArticleEntity;

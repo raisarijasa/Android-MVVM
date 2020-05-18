@@ -1,7 +1,7 @@
 package com.nytimes.articles.view.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.MenuItem;
 
 import com.nytimes.articles.R;

@@ -4,12 +4,12 @@ package com.nytimes.articles.view.fragment;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.SearchView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -90,7 +90,7 @@ public class ArticleListFragment extends BaseFragment<ArticleListViewModel, Frag
 
 
         viewModel.getPopularArticles()
-                .observe(this, listResource -> {
+                .observe(getViewLifecycleOwner(), listResource -> {
                     if(null != listResource && (listResource.status == Status.ERROR || listResource.status == Status.SUCCESS)){
                         dataBinding.loginProgress.setVisibility(View.GONE);
                     }

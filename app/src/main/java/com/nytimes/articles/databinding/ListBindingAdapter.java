@@ -1,7 +1,7 @@
 package com.nytimes.articles.databinding;
 
-import android.databinding.BindingAdapter;
-import android.support.v7.widget.RecyclerView;
+import androidx.databinding.BindingAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.nytimes.articles.data.remote.Resource;
 import com.nytimes.articles.view.base.BaseAdapter;

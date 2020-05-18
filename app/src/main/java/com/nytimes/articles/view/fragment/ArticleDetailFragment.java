@@ -1,7 +1,7 @@
 package com.nytimes.articles.view.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 
 import com.nytimes.articles.R;
@@ -37,7 +37,7 @@ public class ArticleDetailFragment extends BaseFragment<ArticleDetailsViewModel,
             viewModel.setUrl(args.getString(Constants.BUNDLE_KEY_ARTICLE_URL));
             viewModel.loadArticleDetails();
         }
-        viewModel.getArticleEntityMutableLiveData().observe(this, articleEntity -> {
+        viewModel.getArticleEntityMutableLiveData().observe(getViewLifecycleOwner(), articleEntity -> {
             if(null != articleEntity && null != args) {
                 dataBinding.textTitle.setText(articleEntity.getTitle());
                 dataBinding.textContent.setText(articleEntity.getContent());
@@ -46,7 +46,7 @@ public class ArticleDetailFragment extends BaseFragment<ArticleDetailsViewModel,
             }
         });
 
-        viewModel.getErrorMessageRecieved().observe(this, message ->{
+        viewModel.getErrorMessageRecieved().observe(getViewLifecycleOwner(), message ->{
             dataBinding.loadingProgress.setVisibility(View.GONE);
             dataBinding.textContent.setText(getActivity().getString(R.string.networkError));
         });

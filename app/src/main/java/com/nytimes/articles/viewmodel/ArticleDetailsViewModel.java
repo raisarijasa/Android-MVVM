@@ -1,7 +1,7 @@
 package com.nytimes.articles.viewmodel;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import com.nytimes.articles.data.local.entity.ArticleEntity;
 import com.nytimes.articles.data.remote.repository.ArticleRepository;
 import com.nytimes.articles.utils.SingleLiveEvent;

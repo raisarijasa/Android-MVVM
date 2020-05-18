@@ -1,9 +1,9 @@
 package com.nytimes.articles.dao;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.persistence.room.Room;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.lifecycle.LiveData;
+import androidx.room.Room;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.nytimes.articles.data.local.ArticleDatabase;
 import com.nytimes.articles.data.local.entity.ArticleEntity;
@@ -26,7 +26,7 @@ public class ArticleDaosTest {
 
     @Before
     public void init(){
-        articleDatabase = Room.inMemoryDatabaseBuilder(InstrumentationRegistry.getContext(), ArticleDatabase.class).build();
+        articleDatabase = Room.inMemoryDatabaseBuilder(InstrumentationRegistry.getInstrumentation().getContext(), ArticleDatabase.class).build();
     }
 
     @After

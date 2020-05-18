@@ -14,7 +14,8 @@ import retrofit2.http.Path;
  * Modified: 7/24/2018
  */
 public interface ApiService {
-
+//    http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=FjGJqSf9YGAXXwdGGcBOipthLFMHjBur
+//    http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api_key=FjGJqSf9YGAXXwdGGcBOipthLFMHjBur
     @GET("svc/mostpopular/v2/mostviewed/all-sections/{index}.json")
     Call<PopularArticleResponse> loadPopularArticles(@Path("index") int index);
 }
